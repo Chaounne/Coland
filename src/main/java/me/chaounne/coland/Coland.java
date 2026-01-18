@@ -1,16 +1,29 @@
 package me.chaounne.coland;
 
+import me.chaounne.coland.combat.CombatHandler;
 import me.chaounne.coland.commands.Commands;
 import me.chaounne.coland.db.MySQLManager;
+import me.chaounne.coland.events.ClassHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.SQLException;
 
 public final class Coland extends JavaPlugin {
+    private CombatHandler combatHandler;
+    private static Coland instance;
 
     @Override
     public void onEnable() {
+        instance = this;
+        try {
+            combatHandler = new CombatHandler(this);
+            System.out.println("CombatHandler (ProtocolLib) initialisé avec succès");
+        } catch (Exception e) {
+            System.err.println("Erreur lors de l'initialisation de ProtocolLib : " + e.getMessage());
+            e.printStackTrace();
+        }
+
         // Sauvegarder la config par défaut si elle n'existe pas
         saveDefaultConfig();
 
@@ -27,6 +40,7 @@ public final class Coland extends JavaPlugin {
         });
 
         Commands cmd = new Commands();
+        getServer().getPluginManager().registerEvents(new ClassHandler(), this);
     }
 
     @Override
@@ -42,4 +56,13 @@ public final class Coland extends JavaPlugin {
             e.printStackTrace();
         }
     }
+
+    public CombatHandler getCombatHandler() {
+        return combatHandler;
+    }
+
+    public static Coland getInstance() {
+        return instance;
+    }
+
 }
