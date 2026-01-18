@@ -1,0 +1,9 @@
+# Configuration de la base de données MySQL/MariaDB
+database:
+  host: "localhost"
+  port: 3306
+  database: "attention"
+  username: "jsp"
+  password: "changeme"
+  ssl-mode: "DISABLED"
+  timezone: "UTC"

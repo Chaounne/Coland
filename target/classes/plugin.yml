@@ -1,0 +1,7 @@
+name: Coland
+version: '1.0'
+main: me.chaounne.coland.Coland
+api-version: '1.21'
+authors: [ Chaounne ]
+website: https://chaounne.xyz
+

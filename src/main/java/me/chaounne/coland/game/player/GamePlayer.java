@@ -27,4 +27,12 @@ public class GamePlayer {
     public Player getPlayer(){
         return Bukkit.getPlayer(this.playerUUID);
     }
+
+    public Classes getPclass() {
+        return pclass;
+    }
+
+    public void setPclass(Classes pclass) {
+        this.pclass = pclass;
+    }
 }
