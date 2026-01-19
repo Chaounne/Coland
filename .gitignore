@@ -27,3 +27,5 @@ replay_pid*
 config.yml
 # Mais on garde le template
 !src/main/resources/config.yml
+/target
+/target

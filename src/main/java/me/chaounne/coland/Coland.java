@@ -4,6 +4,9 @@ import me.chaounne.coland.combat.CombatHandler;
 import me.chaounne.coland.commands.Commands;
 import me.chaounne.coland.db.MySQLManager;
 import me.chaounne.coland.events.ClassHandler;
+import me.chaounne.coland.events.armor.ArmorListener;
+import me.chaounne.coland.events.armor.DispenserArmorListener;
+import me.chaounne.fastinv.FastInvManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,6 +18,8 @@ public final class Coland extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Sauvegarder la config par défaut si elle n'existe pas
+        saveDefaultConfig();
         instance = this;
         try {
             combatHandler = new CombatHandler(this);
@@ -24,8 +29,12 @@ public final class Coland extends JavaPlugin {
             e.printStackTrace();
         }
 
-        // Sauvegarder la config par défaut si elle n'existe pas
-        saveDefaultConfig();
+        getServer().getPluginManager().registerEvents(new ArmorListener(getConfig().getStringList("blocked")), this);
+        try{
+            //Better way to check for this? Only in 1.13.1+?
+            Class.forName("org.bukkit.event.block.BlockDispenseArmorEvent");
+            getServer().getPluginManager().registerEvents(new DispenserArmorListener(), this);
+        }catch(Exception ignored){}
 
         // Plugin startup logic
         Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
@@ -39,7 +48,9 @@ public final class Coland extends JavaPlugin {
             }
         });
 
+        FastInvManager.register(this);
         Commands cmd = new Commands();
+        getCommand("class").setExecutor(cmd);
         getServer().getPluginManager().registerEvents(new ClassHandler(), this);
     }
 

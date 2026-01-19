@@ -1,7 +1,14 @@
 C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\Coland.java
+C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\combat\CombatHandler.java
 C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\commands\Commands.java
 C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\db\MySQLManager.java
+C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\events\armor\ArmorEquipEvent.java
+C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\events\armor\ArmorListener.java
+C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\events\armor\ArmorType.java
+C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\events\armor\DispenserArmorListener.java
+C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\events\ClassHandler.java
 C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\game\player\Classes.java
+C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\game\player\ClassManager.java
 C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\game\player\GamePlayer.java
 C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\coland\game\player\inv\classes\ClassInv.java
 C:\Users\Utlisateur 1\Documents\GitHub\Coland\src\main\java\me\chaounne\fastboard\FastBoard.java

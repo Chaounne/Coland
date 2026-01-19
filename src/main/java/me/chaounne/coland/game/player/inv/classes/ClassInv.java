@@ -13,10 +13,20 @@ public class ClassInv extends FastInv {
     public ClassInv() {
         super(9,"Choisissez votre classe");
 
-        setItem(0, new ItemBuilder(Material.IRON_SWORD).build(), e -> {
+        setItem(0, new ItemBuilder(Material.IRON_SWORD).name("Assassin").lore("TBA").build(), e -> {
             e.setCancelled(true);
             Player player = (Player) e.getWhoClicked();
             chooseClass(player, Classes.ASSASSIN);
+        });
+        setItem(1, new ItemBuilder(Material.STICK).name("Invocateur").lore("TBA").build(), e -> {
+            e.setCancelled(true);
+            Player player = (Player) e.getWhoClicked();
+            chooseClass(player, Classes.INVOCATEUR);
+        });
+        setItem(2, new ItemBuilder(Material.SHIELD).name("Egide").lore("TBA").build(), e -> {
+            e.setCancelled(true);
+            Player player = (Player) e.getWhoClicked();
+            chooseClass(player, Classes.EGIDE);
         });
 
     }

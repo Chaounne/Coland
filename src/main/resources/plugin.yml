@@ -4,5 +4,8 @@ main: me.chaounne.coland.Coland
 api-version: '1.21'
 depend: [ ProtocolLib ]
 authors: [ Chaounne ]
+description: MMORPG Plugin for Coland
 website: https://chaounne.xyz
-
+commands:
+  class:
+    description: choose a class

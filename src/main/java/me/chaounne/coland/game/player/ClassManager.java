@@ -14,6 +14,7 @@ public class ClassManager {
                 player.getInventory().addItem(new ItemBuilder(Material.IRON_SWORD).build());
                 break;
             case EGIDE:
+                player.getInventory().addItem(new ItemBuilder(Material.SHIELD).build());
                 break;
         }
         activateClassAttribute(player, classe);
