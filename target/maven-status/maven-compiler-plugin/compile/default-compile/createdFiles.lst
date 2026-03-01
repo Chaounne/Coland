@@ -6,6 +6,7 @@ me\chaounne\coland\combat\CombatHandler.class
 me\chaounne\fastboard\FastBoard.class
 me\chaounne\coland\events\armor\ArmorListener.class
 me\chaounne\coland\Coland.class
+me\chaounne\coland\commands\XPCommand.class
 me\chaounne\coland\game\player\Classes.class
 me\chaounne\coland\commands\Commands.class
 me\chaounne\coland\events\ClassHandler.class
@@ -19,9 +20,11 @@ me\chaounne\fastinv\PaginatedFastInv.class
 me\chaounne\coland\game\player\ClassManager$1.class
 me\chaounne\fastinv\FastInvManager$InventoryListener.class
 me\chaounne\fastboard\FastBoard$ScoreboardAction.class
+me\chaounne\coland\game\player\Passive.class
 me\chaounne\fastinv\InventoryScheme.class
 me\chaounne\coland\db\MySQLManager.class
 me\chaounne\fastinv\ItemBuilder.class
+me\chaounne\coland\events\XPListener.class
 me\chaounne\coland\game\player\ClassManager.class
 me\chaounne\coland\combat\CombatHandler$1.class
 me\chaounne\coland\events\armor\ArmorType.class

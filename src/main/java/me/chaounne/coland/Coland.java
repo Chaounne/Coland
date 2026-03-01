@@ -2,8 +2,10 @@ package me.chaounne.coland;
 
 import me.chaounne.coland.combat.CombatHandler;
 import me.chaounne.coland.commands.Commands;
+import me.chaounne.coland.commands.XPCommand;
 import me.chaounne.coland.db.MySQLManager;
 import me.chaounne.coland.events.ClassHandler;
+import me.chaounne.coland.events.XPListener;
 import me.chaounne.coland.events.armor.ArmorListener;
 import me.chaounne.coland.events.armor.DispenserArmorListener;
 import me.chaounne.fastinv.FastInvManager;
@@ -30,6 +32,8 @@ public final class Coland extends JavaPlugin {
         }
 
         getServer().getPluginManager().registerEvents(new ArmorListener(getConfig().getStringList("blocked")), this);
+        getServer().getPluginManager().registerEvents(new ClassHandler(), this);
+        getServer().getPluginManager().registerEvents(new XPListener(), this);
         try{
             //Better way to check for this? Only in 1.13.1+?
             Class.forName("org.bukkit.event.block.BlockDispenseArmorEvent");
@@ -50,8 +54,9 @@ public final class Coland extends JavaPlugin {
 
         FastInvManager.register(this);
         Commands cmd = new Commands();
+        XPCommand xpCmd = new XPCommand();
         getCommand("class").setExecutor(cmd);
-        getServer().getPluginManager().registerEvents(new ClassHandler(), this);
+        getCommand("xp").setExecutor(xpCmd);
     }
 
     @Override

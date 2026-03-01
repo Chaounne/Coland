@@ -9,3 +9,16 @@ website: https://chaounne.xyz
 commands:
   class:
     description: choose a class
+    xp:
+      description: Gestion de l'XP et des niveaux
+      usage: /<command> [add|remove|set|reset] [joueur] [quantité]
+      permission: coland.xp
+      permission-message: Vous n'avez pas la permission d'utiliser cette commande !
+
+    permissions:
+      coland.xp:
+        description: Permet de voir ses propres informations XP
+        default: true
+      coland.xp.admin:
+        description: Permet de gérer l'XP des autres joueurs
+        default: op

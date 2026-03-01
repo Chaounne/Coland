@@ -33,6 +33,7 @@ public class ClassHandler implements Listener {
         Player p = event.getPlayer();
         GamePlayer gp = GamePlayer.getInstance(p);
 
+        gp.updatePlayerDisplay();
         if(gp.getPclass() == null){
             Coland.getInstance().getCombatHandler().disable18Combat(p);
             p.teleport(p.getWorld().getSpawnLocation());
